@@ -1,0 +1,52 @@
+.fTab {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.fTab > input {
+    display: none;
+}
+
+.fTab > label {
+    text-align: center;
+    cursor: pointer;
+    order: 1;
+    flex: 1;
+    padding: 1rem;
+    background-color: var(--c-bg);
+    color: var(--c-text);
+    border: solid 1px var(--c-border);
+    border-right: none;
+}
+.fTab > label:hover {
+    background-color: var(--c-surface);
+}
+
+.fTab > div {
+    width: 100%;
+    display: none;
+    order: 2;
+}
+
+.fTab > input:checked + label + div {
+    display: flex;
+}
+
+.fTab > input:checked + label {
+    color: var(--c-bg);
+    background-color: var(--c-primary);
+}
+
+.fTab > input:checked + label:hover {
+    background-color: var(--c-primary-dark);
+}
+
+.fTab > label:first-of-type {
+    border-radius: var(--rad-1) 0 0 var(--rad-1);
+}
+
+.fTab > label:last-of-type {
+    border-radius: 0 var(--rad-1) var(--rad-1) 0;
+    border-right: solid 1px var(--c-border);
+}

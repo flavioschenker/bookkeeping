@@ -1,0 +1,49 @@
+.fChat {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fChat-display {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fChat-message {
+  border-radius: 1.5rem;
+  padding: 0.625rem 1.25rem;
+  word-wrap: break-word; /* Ensures long words break */
+  overflow-wrap: break-word; /* Alternative for better compatibility */
+  white-space: normal; /* Allows text to wrap */
+}
+.sender {
+  max-width: 80%;
+  align-self: flex-end;
+  background-color: var(--c-2);
+}
+
+.receiver {
+  max-width: 80%;
+  align-self: flex-start;
+  background-color: var(--c-4);
+}
+
+/*
+## Input Section
+*/
+.fChat-input {
+  border-radius: 1.5rem;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--c-2);
+  min-height: 7rem;
+  max-height: 12rem;
+  overflow-y: auto;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+}
+.fChat-input:empty::before {
+  content: "Ask anything";
+  color: gray;
+}

@@ -61,10 +61,10 @@ async function populateTransactions() {
     const row = document.createElement("tr");
     row.innerHTML = `
       <td>${transaction.effective_date}</td>
+      <td>${transaction.description}</td>
       <td>${transaction.debit_name}</td>
       <td>${transaction.credit_name}</td>
       <td>${transaction.amount.toFixed(2)}</td>
-      <td>${transaction.description}</td>
     `;
     table.appendChild(row);
   });
