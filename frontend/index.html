@@ -8,14 +8,8 @@
         <div class="fContainer fG-2">
             <h1>Buchhaltung</h1>
             <div class="fTab">
-                <input
-                    id="tab1"
-                    class="input"
-                    name="nav"
-                    type="radio"
-                    checked
-                />
-                <label for="tab1" class="label">Übersicht</label>
+                <input id="tab1" name="nav" type="radio" checked />
+                <label for="tab1">Übersicht</label>
                 <div class="fContainer fPt-2 fG-2">
                     <div class="fSection fP-1 fG-1">
                         <h2>Neue Position anlegen</h2>
@@ -107,50 +101,149 @@
                         </div>
                     </div>
                 </div>
-                <input id="tab2" class="input" name="nav" type="radio" />
-                <label for="tab2" class="label">Buchen</label>
-                <div class="section">
-                    <h2>Create Transaction</h2>
-                    <form id="transactionForm">
-                        <input type="date" id="effectiveDate" required />
-                        <input
-                            type="number"
-                            step="0.01"
-                            id="amount"
-                            min="0.00"
-                            placeholder="Amount"
-                            required
-                        />
-                        <select id="debitAccount" required></select>
-                        <select id="creditAccount" required></select>
-                        <input
-                            type="text"
-                            id="description"
-                            placeholder="Description"
-                        />
-                        <button type="submit">Record Transaction</button>
-                    </form>
+                <input id="tab2" name="nav" type="radio" checked />
+                <label for="tab2">Buchen</label>
+                <div class="fContainer fPt-2 fG-2">
+                    <div class="fSection fP-1 fG-1">
+                        <h2>Neue Buchung erfassen</h2>
+                        <form id="transactionForm" class="fForm">
+                            <div class="fRow fG-1">
+                                <div class="fCol-1">
+                                    <input
+                                        type="date"
+                                        value=""
+                                        id="effectiveDate"
+                                        required
+                                    />
+                                    <label>Datum</label>
+                                </div>
+                                <div class="fCol-1">
+                                    <input
+                                        type="number"
+                                        step="0.01"
+                                        min="0.00"
+                                        id="amount"
+                                        required
+                                    />
+                                    <label>Betrag</label>
+                                </div>
+                            </div>
+                            <div class="fRow fG-1">
+                                <div class="fCol-1">
+                                    <select id="debitAccount" required>
+                                        <option
+                                            selected
+                                            disabled
+                                            hidden
+                                        ></option>
+                                    </select>
+                                    <label>Soll</label>
+                                </div>
+                                <div class="fCol-1">
+                                    <select
+                                        id="creditAccount"
+                                        required
+                                    ></select>
+                                    <label>Haben</label>
+                                </div>
+                            </div>
+                            <div class="fRow fG-1">
+                                <div class="fCol-5">
+                                    <input
+                                        type="text"
+                                        id="description"
+                                        required
+                                    />
+                                    <label>Beschreibung</label>
+                                </div>
+                                <div class="fCol-1">
+                                    <button type="submit">Erstellen</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="fSection fP-1 fG-1">
+                        <h2>Buchungen</h2>
+                        <table id="transactionTable">
+                            <thead>
+                                <tr>
+                                    <th>Datum</th>
+                                    <th>Beschreibung</th>
+                                    <th>Soll</th>
+                                    <th>Haben</th>
+                                    <th>[CHF] Betrag</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
                 </div>
-                <input id="tab3" class="input" name="nav" type="radio" />
-                <label for="tab3" class="label">Budget</label>
-                <div class="section">
-                    <h2>Buchungen</h2>
-                    <table id="transactionTable">
-                        <thead>
-                            <tr>
-                                <th>Datum</th>
-                                <th>Beschreibung</th>
-                                <th>Soll</th>
-                                <th>Haben</th>
-                                <th>[CHF] Betrag</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+                <input id="tab3" name="nav" type="radio" checked />
+                <label for="tab3">Bilanz</label>
+                <div class="fContainer fPt-2 fG-2">
+                    <div class="fSection fP-1 fG-1">
+                        <h2>Filter</h2>
+                        <form id="balanceForm" class="fForm">
+                            <div class="fRow fG-1">
+                                <div class="fCol-1 fForm-group">
+                                    <input
+                                        type="number"
+                                        id="balanceYear"
+                                        min="2025"
+                                        max="2030"
+                                        step="1"
+                                        value="2025"
+                                        required
+                                    />
+                                    <label>Jahr</label>
+                                </div>
+                                <div class="fCol-1 fForm-group">
+                                    <select id="balanceMonth" required>
+                                        <option
+                                            disabled
+                                            hidden
+                                            selected
+                                        ></option>
+                                        <option value="1">Januar</option>
+                                        <option value="2">Februar</option>
+                                        <option value="3">März</option>
+                                        <option value="4">April</option>
+                                        <option value="5">Mai</option>
+                                        <option value="6">Juni</option>
+                                        <option value="7">Juli</option>
+                                        <option value="8">August</option>
+                                        <option value="9">September</option>
+                                        <option value="10">Oktober</option>
+                                        <option value="11">November</option>
+                                        <option value="12">Dezember</option>
+                                    </select>
+                                    <label>Monat</label>
+                                </div>
+                                <div class="fCol-1 fForm-group">
+                                    <select id="balanceType" required>
+                                        <option
+                                            disabled
+                                            hidden
+                                            selected
+                                        ></option>
+                                        <option value="asset">Aktiven</option>
+                                        <option value="liability"
+                                            >Passiven</option
+                                        >
+                                        <option value="expense">Aufwand</option>
+                                        <option value="revenue">Ertrag</option>
+                                    </select>
+                                    <label>Konto</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="fGrid-3 fG-1" id="balanceContainer"> </div>
                 </div>
             </div>
         </div>
 
         <script src="app.js"></script>
+        <script src="js/balance.js"></script>
     </body>
 </html>

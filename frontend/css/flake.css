@@ -1,3 +1,4 @@
+@import url("modules/grid.css");
 @import url("modules/form.css");
 @import url("modules/chat.css");
 @import url("modules/tab.css");
@@ -18,7 +19,7 @@
 body {
     margin: 0 auto;
     width: 100%;
-    max-width: 900px;
+    max-width: 1100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +29,7 @@ body {
     color: var(--c-text);
     background-color: var(--c-bg);
     --c-bg: #f8f9fa;
-    --c-surface: #e9ecef;
+    --c-surface: #f5f5f5;
     --c-border: #dddddd;
     --c-muted: #999999;
     --c-text: #212529;
@@ -81,6 +82,15 @@ body {
     flex-direction: column;
     border: 1px solid var(--c-border);
     border-radius: 0.3rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 500;
+    font-family: inherit;
 }
 
 .fRounded-n {

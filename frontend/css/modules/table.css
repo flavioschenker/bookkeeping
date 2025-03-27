@@ -17,5 +17,5 @@ td:last-child {
     text-align: right;
 }
 th {
-    background-color: #f5f5f5;
+    background-color: var(--c-surface);
 }

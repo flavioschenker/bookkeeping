@@ -1,0 +1,20 @@
+.fGrid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.fGrid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.fGrid-4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.fGrid-5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.fGrid-6 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
